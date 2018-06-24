@@ -5,7 +5,6 @@ const { messages } = require('elasticio-node');
 const EventEmitter = require('events');
 
 class TestEmitter extends EventEmitter {
-
     constructor(done) {
         super();
         this.data = [];
@@ -22,18 +21,14 @@ class TestEmitter extends EventEmitter {
             done();
         });
     }
-
 }
 
 describe('Integration test', () => {
-
-
     before(() => {
-        if (!process.env.MSSQL_URL) {throw new Error('Please set MSSQL_URL env variable to proceed');}
+        if (!process.env.MSSQL_URL) { throw new Error('Please set MSSQL_URL env variable to proceed'); }
     });
 
     describe('for INSERT', () => {
-
         const cfg = {
             uri: process.env.MSSQL_URL,
             query: 'INSERT INTO Test2.dbo.Tweets (Lang, Retweeted, Favorited, "Text", id, '
@@ -70,7 +65,6 @@ describe('Integration test', () => {
     });
 
     describe('for SELECT', () => {
-
         const cfg = {
             uri: process.env.MSSQL_URL
         };
@@ -92,7 +86,6 @@ describe('Integration test', () => {
     });
 
     describe('for legacy SELECT configuration', () => {
-
         const cfg = {
             uri: process.env.MSSQL_URL,
             query: 'select * from Tweets ORDER BY id OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY;'
@@ -112,9 +105,7 @@ describe('Integration test', () => {
         });
     });
 
-
     describe('for polling SELECT', () => {
-
         const cfg = {
             uri: process.env.MSSQL_URL
         };
@@ -135,5 +126,4 @@ describe('Integration test', () => {
             select.process.call(emitter, msg, cfg, {}).catch(err => done(err));
         });
     });
-
 });

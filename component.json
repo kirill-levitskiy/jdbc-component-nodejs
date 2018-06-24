@@ -1,0 +1,69 @@
+{
+  "title": "JDBC Component (node.js)",
+  "description": "elastic.io JDBC Component (node.js)",
+  "docsUrl": "https://github.com/elasticio/",
+  "credentials": {
+    "fields": {
+      "driverType": {
+        "label": "Database Engine",
+        "viewClass": "SelectView",
+        "required" : true,
+        "model": {
+          "com.microsoft.sqlserver.jdbc.SQLServerDriver": "Microsoft SQL Server",
+          "com.mysql.jdbc.Driver": "MySQL",
+          "oracle.jdbc.driver.OracleDriver": "Oracle",
+          "org.postgresql.Driver": "PostgreSQL"
+        },
+        "prompt": "Choose an option"
+      },
+      "server": {
+        "label": "Server (for MSSQL you can use 'host\\instance' to connect to named instance)",
+        "required": true,
+        "viewClass": "TextFieldView",
+        "placeholder": "localhost"
+      },
+      "port": {
+        "label": "Port (for MSSQL don't set when connecting to named instance)",
+        "required": false,
+        "viewClass": "TextFieldView",
+        "placeholder": "1433"
+      },
+      "database": {
+        "label": "Database Name",
+        "required": true,
+        "viewClass": "TextFieldView",
+        "placeholder": "database"
+      },
+      "encrypt": {
+        "label": "Encrypt (check this option if you're using Windows Azure)",
+        "viewClass": "CheckBoxView"
+      },
+      "domain": {
+        "label": "Domain (driver will connect to SQL Server using domain login)",
+        "required": false,
+        "viewClass": "TextFieldView",
+        "placeholder": "domain"
+      },
+      "username": {
+        "label": "Username",
+        "required": true,
+        "viewClass": "TextFieldView",
+        "placeholder": "username"
+      },
+      "password": {
+        "label": "Password",
+        "required": true,
+        "viewClass": "PasswordFieldView",
+        "placeholder": "password"
+      }
+    }
+  },
+  "triggers": {},
+  "actions": {
+    "lookupRowByPrimaryKey": {
+      "main": "./lib/actions/lookupRowByPrimaryKey.js",
+      "title": "Lookup Row by Primary Key",
+      "metadata": {}
+    }
+  }
+}
