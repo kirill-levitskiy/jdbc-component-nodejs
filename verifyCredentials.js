@@ -12,6 +12,6 @@ module.exports = verify;
  * @returns Promise sending HTTP request and resolving its response
  */
 function verify(credentials) {
-    
+
     return true;
 }

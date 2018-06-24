@@ -9,10 +9,10 @@
         "viewClass": "SelectView",
         "required" : true,
         "model": {
-          "com.microsoft.sqlserver.jdbc.SQLServerDriver": "Microsoft SQL Server",
-          "com.mysql.jdbc.Driver": "MySQL",
-          "oracle.jdbc.driver.OracleDriver": "Oracle",
-          "org.postgresql.Driver": "PostgreSQL"
+          "SQLServerDriver": "Microsoft SQL Server",
+          "MySQLDriver": "MySQL",
+          "OracleDriver": "Oracle",
+          "PostgreSQLDriver": "PostgreSQL"
         },
         "prompt": "Choose an option"
       },
