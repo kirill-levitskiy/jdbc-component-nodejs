@@ -63,7 +63,18 @@
     "lookupRowByPrimaryKey": {
       "main": "./lib/actions/lookupRowByPrimaryKey.js",
       "title": "Lookup Row by Primary Key",
-      "metadata": {}
+      "metadata": {
+        "in": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "title": "SQL Query",
+              "required": true
+            }
+          }
+        }
+      }
     }
   }
 }
