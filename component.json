@@ -58,11 +58,10 @@
       }
     }
   },
-  "triggers": {},
   "actions": {
     "lookupRowByPrimaryKey": {
       "main": "./lib/actions/lookupRowByPrimaryKey.js",
-      "title": "Lookup Row by Primary Key",
+      "title": "LookupRowByPrimaryKey",
       "metadata": {
         "in": {
           "type": "object",
