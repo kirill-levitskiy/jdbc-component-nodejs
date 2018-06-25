@@ -28,7 +28,7 @@ class TestEmitter extends EventEmitter {
 describe('Integration test', () => {
 
     describe('for SELECT', () => {
-        let cfg = '';
+        let cfg = {};
 
         it('should select data', (done) => {
             const emitter = new TestEmitter(() => {
@@ -40,7 +40,8 @@ describe('Integration test', () => {
             const msg = messages.newMessageWithBody({
                 query: 'select * from Test2.dbo.Tweets ORDER BY id OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY;'
             });
-            lookup.process.call(emitter, msg, cfg).catch(err => done(err));
+            lookup.process.call(emitter, msg, cfg);
+            done();
         });
     });
 
