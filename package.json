@@ -3,7 +3,8 @@
     "version": "0.0.1",
     "description": "elastic.io component for the Petstore API",
     "scripts": {
-        "test": "exit 0"
+        "pretest": "node_modules/.bin/eslint lib spec spec-integration --ext .json --ext .js --fix",
+        "integration-test": "NODE_ENV=test mocha test/* --exit"
     },
     "repository": {
         "type": "git",
@@ -16,10 +17,14 @@
         "npm": ">=5.4"
     },
     "dependencies": {
+        "asyncjs": "0.0.12",
+        "chai": "^4.1.2",
         "co": "4.6.0",
         "elasticio-node": "0.0.9",
         "elasticio-sailor-nodejs": "2.2.1",
+        "java": "^0.10.0",
         "jdbc": "0.6.1",
+        "mocha": "^5.2.0",
         "request": "^2.87.0",
         "request-promise": "4.1.1"
     },
