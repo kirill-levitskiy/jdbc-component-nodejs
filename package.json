@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "description": "elastic.io component for the Petstore API",
     "scripts": {
-        "install": "./compile-java-code.sh && ./compile-java8-code.sh && node-gyp configure build && npm test",
+        "install": "/app/node_modules/jdbc/node_modules/java/compile-java-code.sh && /app/node_modules/jdbc/node_modules/java/compile-java8-code.sh && node-gyp configure build && npm test",
         "pretest": "node_modules/.bin/eslint lib spec spec-integration --ext .json --ext .js --fix",
         "integration-test": "NODE_ENV=test mocha test/* --exit"
     },
