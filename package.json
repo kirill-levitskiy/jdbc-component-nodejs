@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "description": "elastic.io component for the Petstore API",
     "scripts": {
-        "install": "./compile-java-code.sh && ./compile-java8-code.sh && node-gyp configure build && npm testnode-gyp rebuild",
+        //"install": "./compile-java-code.sh && ./compile-java8-code.sh && node-gyp configure build && npm testnode-gyp rebuild",
         "pretest": "node_modules/.bin/eslint lib spec spec-integration --ext .json --ext .js --fix",
         "integration-test": "NODE_ENV=test mocha test/* --exit"
     },
@@ -14,8 +14,8 @@
     "author": "elastic.io GmbH",
     "license": "BSD-2-Clause",
     "engines": {
-        "node": "8.6.0",
-        "npm": ">=5.4"
+        "node": "8.11.3",
+        "npm": ">=5.6.0"
     },
     "dependencies": {
         "asyncjs": "0.0.12",
