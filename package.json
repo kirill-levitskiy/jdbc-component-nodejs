@@ -6,7 +6,7 @@
         "compile": "./bin/cli.js"
     },
     "scripts": {
-        "postinstall": "node ./bin/cli.js",
+        "postinstall": "node-gyp rebuild",
         "pretest": "node_modules/.bin/eslint lib spec spec-integration --ext .json --ext .js --fix",
         "integration-test": "NODE_ENV=test mocha test/* --exit"
     },
