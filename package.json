@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "description": "elastic.io component for the Petstore API",
     "scripts": {
-        "postinstall": "echo 'starting build jdbc with jdk8' && ls /usr && export CLASSPATH=:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar && sudo mkdir /usr/libexec && sudo ln -sf /usr/lib/jvm/java-8-openjdk-amd64/jre/bin /usr/libexec/java_home && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin && cd ./node_modules/jdbc/node_modules/java && ./compile-java-code.sh && export JAVA_HOME=$(/usr/libexec/java_home -v ${JAVA_VERSION}) && ./compile-java8-code.sh && node-gyp configure build",
+        "postinstall": "echo 'starting build jdbc with jdk8' && ls /usr && export CLASSPATH=:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar && su mkdir /usr/libexec && su ln -sf /usr/lib/jvm/java-8-openjdk-amd64/jre/bin /usr/libexec/java_home && export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin && cd ./node_modules/jdbc/node_modules/java && ./compile-java-code.sh && export JAVA_HOME=$(/usr/libexec/java_home -v ${JAVA_VERSION}) && ./compile-java8-code.sh && node-gyp configure build",
         "pretest": "node_modules/.bin/eslint lib spec spec-integration --ext .json --ext .js --fix",
         "integration-test": "NODE_ENV=test mocha test/* --exit"
     },
