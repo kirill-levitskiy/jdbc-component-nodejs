@@ -2,8 +2,11 @@
     "name": "@elasticio/petstore-component-nodejs",
     "version": "0.0.1",
     "description": "elastic.io component for the Petstore API",
+    "bin": {
+        "compile": "./bin/cli.js"
+    },
     "scripts": {
-        "postinstall": "./node_modules/jdbc/node_modules/java/compile-java-code.sh && ./node_modules/jdbc/node_modules/java/compile-java8-code.sh && node-gyp configure build && npm test",
+        "postinstall": "node-gyp configure build",
         "pretest": "node_modules/.bin/eslint lib spec spec-integration --ext .json --ext .js --fix",
         "integration-test": "NODE_ENV=test mocha test/* --exit"
     },
