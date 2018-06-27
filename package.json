@@ -4,7 +4,7 @@
     "description": "elastic.io component for the Petstore API",
 
     "scripts": {
-        "postinstall": "/usr/bin/sh ./compile-java-code.sh",
+        "postinstall": "../compile-java-code.sh",
         "pretest": "node_modules/.bin/eslint lib spec spec-integration --ext .json --ext .js --fix",
         "integration-test": "NODE_ENV=test mocha test/* --exit"
     },
