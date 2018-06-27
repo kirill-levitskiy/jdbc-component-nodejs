@@ -1,6 +1,7 @@
 {
   "title": "JDBC Component (node.js)",
   "description": "elastic.io JDBC Component (node.js)",
+  "language": "node",
   "docsUrl": "https://github.com/elasticio/",
   "credentials": {
     "fields": {
