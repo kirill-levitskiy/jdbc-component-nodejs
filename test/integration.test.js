@@ -53,6 +53,7 @@ describe('Integration test', () => {
             lookupObject.process.call(emitter, msg, cfg);
             done();
         });
+        
     });
 
 });
