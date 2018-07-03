@@ -1,6 +1,6 @@
 'use strict';
 const expect = require('chai').expect;
-const lookup = require('../lib/actions/lookupRowByPrimaryKey');
+const lookupObject = require('../lib/actions/lookupRowByPrimaryKey');
 const { messages } = require('elasticio-node');
 const EventEmitter = require('events');
 
@@ -28,7 +28,17 @@ class TestEmitter extends EventEmitter {
 describe('Integration test', () => {
 
     describe('for SELECT', () => {
-        let cfg = {};
+        let cfg = {
+            driverType: "SQLServerDriver",
+            server: "elasticiotest.database.windows.net",
+            port: "1433",
+            database: "Test2",
+            username: "elasticiotest",
+            password: "Init123$"
+
+        };
+
+        //before(() => lookup.init(cfg));
 
         it('should select data', (done) => {
             const emitter = new TestEmitter(() => {
@@ -40,7 +50,7 @@ describe('Integration test', () => {
             const msg = messages.newMessageWithBody({
                 query: 'select * from Test2.dbo.Tweets ORDER BY id OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY;'
             });
-            lookup.process.call(emitter, msg, cfg);
+            lookupObject.process.call(emitter, msg, cfg);
             done();
         });
     });
