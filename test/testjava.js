@@ -1,4 +1,4 @@
-var metadata = require('./jdbc-metadata/');
+var metadata = require('../lib/commons/jdbc_metadata/jdbcMetadata.js');
 
 var libpath = "D:\\workspace\\jdbc-component-nodejs\\lib\\commons\\..\\..\\drivers\\sqljdbc4.jar";
 var drivername = "com.microsoft.sqlserver.jdbc.SQLServerDriver";

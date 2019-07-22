@@ -38,7 +38,7 @@ describe('Integration test', () => {
 
         };
 
-        //before(() => lookup.init(cfg));
+        before(() => lookupObject.init(cfg));
 
         it('should select data', (done) => {
             const emitter = new TestEmitter(() => {
@@ -53,7 +53,7 @@ describe('Integration test', () => {
             lookupObject.process.call(emitter, msg, cfg);
             done();
         });
-        
+
     });
 
 });
